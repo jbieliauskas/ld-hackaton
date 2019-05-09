@@ -11,10 +11,9 @@
       </thead>
       <tbody>
         <client 
-          v-for="({name, callTime}, index) in clients"
+          v-for="(client, index) in clients"
           :key="index"
-          :name="name"
-          :call-time="callTime"
+          v-bind="client"
         />
       </tbody>
     </table>

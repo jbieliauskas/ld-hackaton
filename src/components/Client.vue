@@ -3,15 +3,25 @@
     <td>{{ name }}</td>
     <td>{{ callTime }}</td>
     <td>Rezultatas</td>
-    <td><a v-if="trackLink !== null" :href="trackLink">Takelis</a></td>
+    <track-link 
+      :name="name"
+      :damage-type="damageType"
+      :amount="amount"
+      :car-brand="carBrand"
+      :car-number="carNumber"
+      :template="template"
+    />
     <td><button>Skambinti</button></td>
   </tr>
 </template>
 
 <script>
-import { setTimeout } from 'timers';
+import axios from 'axios';
+import TrackLink from './TrackLink';
 
 export default {
+  name: 'Client',
+  components: {TrackLink},
   props: {
     name: {
       type: String,
@@ -21,16 +31,26 @@ export default {
       type: String,
       required: true,
     },
-  },
-  data() {
-    return {
-      trackLink: null,
-    };
-  },
-  created() {
-    setTimeout(() => {
-      this.trackLink = 'https://9gag.com';
-    }, 1000);
+    damageType: {
+      type: String,
+      required: true,
+    },
+    amount: {
+      type: String,
+      required: true,
+    },
+    carBrand: {
+      type: String,
+      default: null,
+    },
+    carNumber: {
+      type: String,
+      default: null,
+    },
+    template: {
+      type: String,
+      required: true,
+    },
   },
 };
 </script>
