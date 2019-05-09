@@ -64,7 +64,7 @@ export default {
         Vardas: this.name,
         Suma: this.amount,
         Marke: this.carBrand,
-        Numberis: this.carNumber,
+        Numeris: this.carNumber,
         Sablonas: this.template,
       });
     },
