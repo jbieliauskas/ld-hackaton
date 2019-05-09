@@ -1,29 +1,21 @@
 <template>
   <div id="app">
-    <HelloWorld msg="A"/>
-    <PhoneCall mp3="https://liepa.rastija.lt/DesktopModules/LiepasAdmin/TextToSpeech.ashx/85136c79cbf9fe36bb9d05d0639c70c265c18d37-Vladas-50.mp3"/>
+    <new-client @save="clients.push($event)" />
+    <clients :clients="clients" />
   </div>
 </template>
 
 <script>
-import PhoneCall from './components/PhoneCall.vue'
-import HelloWorld from './components/HelloWorld.vue'
+import NewClient from './components/NewClient';
+import Clients from './components/Clients';
 
 export default {
-  name: 'app',
-  components: {
-    PhoneCall, HelloWorld
-  }
-}
+  name: 'App',
+  components: {NewClient, Clients},
+  data() {
+    return {
+      clients: [],
+    };
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
