@@ -29,7 +29,12 @@
     <input type="text" placeholder="Skambučio laikas" v-model="callTime" />
     <br />
 
-    <textarea v-model="template">Šablonas</textarea>
+    <client-template 
+      :damage-type="damageType"
+      :value="template"
+      @input="template = $event"
+    >
+    </client-template>
     <br />
 
     <button @click="save">OK</button>
@@ -37,8 +42,11 @@
 </template>
 
 <script>
+import ClientTemplate from './Template';
+
 export default {
   name: 'NewClient',
+  components: {ClientTemplate},
   data() {
     return {
       damageType: 'property',
