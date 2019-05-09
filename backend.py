@@ -9,7 +9,7 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 def gauti_transporto_mp3(): 
     req_data = request.get_json()
     url = "https://liepa.rastija.lt/DesktopModules/LiepasAdmin/TextToSpeech.ashx"
-    transporto_text = req_data['Sablonas'].replace("__Vardas__", req_data['Vardas']).replace("__Suma__", req_data['Suma']).replace("__Numeris__", req_data['Numeris'][0]+"! "+req_data['Numeris'][1]+"! "+req_data['Numeris'][2:]).replace("__Marke__", req_data['Marke'])
+    transporto_text = req_data['Sablonas'].replace("__Vardas__", req_data['Vardas']).replace("__Suma__", req_data['Suma']).replace("__Numeris__", req_data['Numeris'][0]+"! "+req_data['Numeris'][1]+"! "+req_data['Numeris'][2]+" "+req_data['Numeris'][3]+" "+req_data['Numeris'][4]+" "+req_data['Numeris'][5]).replace("__Marke__", req_data['Marke'])
     post_dict = {'text': transporto_text, 'voice': '3', 'speed': '45'}
     post_request = requests.post(url, data = post_dict).text
     get_url = url+"/"+post_request+".mp3"
