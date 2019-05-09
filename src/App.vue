@@ -1,6 +1,8 @@
 <template>
   <div id="app">
+    <h1>Šablonas</h1>
     <new-client @save="clients.push($event)" />
+    <h1>Klientai</h1>
     <clients :clients="clients" />
   </div>
 </template>

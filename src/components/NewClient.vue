@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h1>Šablonas</h1>
-
     <label>
       <input type="radio" value="property" v-model="damageType" /> 
         Turtinė žala
