@@ -5,10 +5,16 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted() {
+    axios
+    .post('http://localhost:5000', {text: 'Sveiki visi!'})
+      .then(alert)
   }
 }
 </script>
