@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <PhoneCall />
+    <PhoneCall mp3="https://liepa.rastija.lt/DesktopModules/LiepasAdmin/TextToSpeech.ashx/85136c79cbf9fe36bb9d05d0639c70c265c18d37-Vladas-50.mp3"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import PhoneCall from './components/PhoneCall.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld, PhoneCall
+    PhoneCall
   }
 }
 </script>
