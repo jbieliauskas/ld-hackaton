@@ -14,6 +14,9 @@
       <input type="text" placeholder="Vardas" v-model="name" />
       <br />
 
+      <input type="text" placeholder="Asmens kodas" v-model="personId" />
+      <br />
+
       <input type="text" placeholder="Suma" v-model="amount" />
     </div>
 
@@ -49,6 +52,7 @@ export default {
     return {
       damageType: 'property',
       name: null,
+      personId: null,
       amount: null,
       carBrand: null,
       carNumber: null,
@@ -61,6 +65,7 @@ export default {
       this.$emit('save', {
         damageType: this.damageType,
         name: this.name,
+        personId: this.personId,
         amount: this.amount,
         carBrand: this.carBrand,
         carNumber: this.carNumber,
