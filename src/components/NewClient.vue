@@ -17,6 +17,9 @@
       <input type="text" placeholder="Asmens kodas" v-model="personId" />
       <br />
 
+      <input type="text" placeholder="Telefono numeris" v-model="phoneNumber" />
+      <br />
+
       <input type="text" placeholder="Suma" v-model="amount" />
     </div>
 
@@ -53,6 +56,7 @@ export default {
       damageType: 'property',
       name: null,
       personId: null,
+      phoneNumber: null,
       amount: null,
       carBrand: null,
       carNumber: null,
@@ -66,6 +70,7 @@ export default {
         damageType: this.damageType,
         name: this.name,
         personId: this.personId,
+        phoneNumber: this.phoneNumber,
         amount: this.amount,
         carBrand: this.carBrand,
         carNumber: this.carNumber,
