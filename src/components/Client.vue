@@ -14,11 +14,13 @@
       @load="$emit('trackLink', $event)"
     />
     <td>
-      <button 
+      <v-btn 
+        color="primary"
         @click="$emit('call')"
       >
+        <v-icon dark>phone</v-icon>
         Skambinti
-      </button>
+      </v-btn>
     </td>
   </tr>
 </template>
@@ -66,3 +68,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+ td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+</style>

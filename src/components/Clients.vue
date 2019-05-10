@@ -35,3 +35,16 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+ table {
+   border-collapse: collapse;
+   width: 100%;
+ }
+
+ th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+</style>
