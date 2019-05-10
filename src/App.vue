@@ -1,14 +1,18 @@
 <template>
-  <div id="app">
-    <h1>Šablonas</h1>
-    <new-client @save="clients.push($event)" />
-    <h1>Klientai</h1>
-    <clients 
-      :clients="clients" 
-      @trackLink="setClientTrackLink"
-      @call="callClient"
-    />
-  </div>
+  <v-app>
+    <v-content>
+      <v-container fluid>
+        <h1>Šablonas</h1>
+        <new-client @save="clients.push($event)" />
+        <h1>Klientai</h1>
+        <clients 
+          :clients="clients" 
+          @trackLink="setClientTrackLink"
+          @call="callClient"
+        />
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
