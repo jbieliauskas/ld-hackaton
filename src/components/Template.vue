@@ -1,9 +1,10 @@
 <template>
-  <textarea 
+  <v-textarea
+    solo
+    auto-grow
     :value="value" 
     @input="onInput"
-  >
-  </textarea>
+  ></v-textarea>
 </template>
 
 <script>

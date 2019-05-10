@@ -1,37 +1,37 @@
 <template>
-  <div>
-    <label>
-      <input type="radio" value="property" v-model="damageType" /> 
-        Turtinė žala
-    </label>
-    <label>
-      <input type="radio" value="transport" v-model="damageType" /> 
-      Transporto žala
-    </label>
-    <br />
+  <v-form>
+    <v-container>
 
-    <div>
-      <input type="text" placeholder="Vardas" v-model="name" />
-      <br />
+    <v-radio-group v-model="damageType" row>
+      <v-radio label="Turtinė žala" value="property"></v-radio>
+      <v-radio label="Transporto žala" value="transport"></v-radio>
+    </v-radio-group>
 
-      <input type="text" placeholder="Asmens kodas" v-model="personId" />
-      <br />
+    <v-layout row wrap>
+      <v-flex md4>
+        <v-text-field label="Vardas" solo v-model="name"></v-text-field>
+      </v-flex>
 
-      <input type="text" placeholder="Telefono numeris" v-model="phoneNumber" />
-      <br />
+      <v-flex md4>
+        <v-text-field label="Asmens kodas" solo v-model="personId"></v-text-field>
+      </v-flex>
 
-      <input type="text" placeholder="Suma" v-model="amount" />
-    </div>
+      <v-flex md4>
+        <v-text-field label="Telefono numeris" solo v-model="phoneNumber"></v-text-field>
+      </v-flex>
 
-    <div v-if="damageType === 'transport'">
-      <input type="text" placeholder="Markė" v-model="carBrand" />
-      <br />
+      <v-flex md4>
+        <v-text-field label="Suma" solo v-model="amount"></v-text-field>
+      </v-flex>
 
-      <input type="text" placeholder="Valstybinis numeris" v-model="carNumber" />
-    </div>
+      <v-flex md4 v-if="damageType === 'transport'">
+        <v-text-field label="Markė" solo v-model="carBrand"></v-text-field>
+      </v-flex>
 
-    <!-- <input type="text" placeholder="Skambučio laikas" v-model="callTime" />
-    <br /> -->
+      <v-flex md4 v-if="damageType === 'transport'">
+        <v-text-field label="Valstybinis numeris" solo v-model="carNumber"></v-text-field>
+      </v-flex>
+    </v-layout>
 
     <client-template 
       :damage-type="damageType"
@@ -39,10 +39,13 @@
       @input="template = $event"
     >
     </client-template>
-    <br />
 
-    <button @click="save">OK</button>
-  </div>
+    <v-btn fab dark color="indigo" @click="save">
+      <v-icon dark>add</v-icon>
+    </v-btn>
+
+    </v-container>
+  </v-form>
 </template>
 
 <script>

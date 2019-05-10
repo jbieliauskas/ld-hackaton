@@ -10,14 +10,9 @@
               </v-card-title>
               <v-card-text>
                 <v-form>
-                  <!-- <h1></h1> -->
                   <new-client @save="clients.push($event)" />
                 </v-form>
               </v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="primary">Login</v-btn>
-              </v-card-actions>
             </v-card>
 
             <v-card class="elevation-12">
