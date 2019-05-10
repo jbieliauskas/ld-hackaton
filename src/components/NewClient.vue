@@ -69,6 +69,10 @@ export default {
   },
   methods: {
     save() {
+      this.emitSave();
+      this.clear();
+    },
+    emitSave() {
       this.$emit('save', {
         damageType: this.damageType,
         name: this.name,
@@ -82,6 +86,15 @@ export default {
         template: this.template,
         trackLink: null,
       });
+    },
+    clear() {
+      this.damageType = 'property';
+      this.name = null;
+      this.personId = null;
+      this.phoneNumber = null;
+      this.amount = null;
+      this.carBrand = null;
+      this.carNumber = null;
     },
   },
 };
