@@ -1,15 +1,34 @@
 <template>
-  <v-app>
+  <v-app id="inspire">
     <v-content>
-      <v-container fluid>
-        <h1>Šablonas</h1>
-        <new-client @save="clients.push($event)" />
-        <h1>Klientai</h1>
-        <clients 
-          :clients="clients" 
-          @trackLink="setClientTrackLink"
-          @call="callClient"
-        />
+      <v-container fluid fill-height>
+        <v-layout align-center justify-center>
+          <v-flex xs12 sm8 md6>
+            <v-card class="elevation-12 mb-5">
+              <v-card-text>
+                <v-form>
+                  <h1>Šablonas</h1>
+                  <new-client @save="clients.push($event)" />
+                </v-form>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="primary">Login</v-btn>
+              </v-card-actions>
+            </v-card>
+
+            <v-card class="elevation-12">
+              <v-card-text>
+                <h1>Klientai</h1>
+                <clients 
+                  :clients="clients" 
+                  @trackLink="setClientTrackLink"
+                  @call="callClient"
+                />
+              </v-card-text>
+            </v-card>
+          </v-flex>
+        </v-layout>
       </v-container>
     </v-content>
   </v-app>
