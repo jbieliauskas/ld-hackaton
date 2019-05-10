@@ -3,7 +3,7 @@
     solo
     auto-grow
     :value="value" 
-    @input="onInput"
+    @change="onInput"
   ></v-textarea>
 </template>
 
@@ -26,9 +26,9 @@ export default {
     };
   },
   methods: {
-    onInput(event) {
+    onInput(value) {
       this.edited = true;
-      this.emit(event.target.value);
+      this.emit(value);
     },
     emit(value) {
       this.$emit('input', value);
