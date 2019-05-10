@@ -14,6 +14,7 @@
 <script>
 import NewClient from './components/NewClient';
 import Clients from './components/Clients';
+import axios from 'axios';
 
 export default {
   name: 'App',
@@ -28,8 +29,13 @@ export default {
       this.clients[index].trackLink = value;
     },
     callClient(index) {
-      const client = JSON.parse(JSON.stringify(this.clients[index]));
-      console.log(client);
+      const client = this.clients[index];
+      axios
+        .post('http://localhost:3000/call', {
+          track: client.trackLink,
+          phone: client.phoneNumber,
+        })
+        .catch(console.error);
     },
   },
 };
