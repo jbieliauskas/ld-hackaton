@@ -30,8 +30,8 @@
       <input type="text" placeholder="Valstybinis numeris" v-model="carNumber" />
     </div>
 
-    <input type="text" placeholder="Skambučio laikas" v-model="callTime" />
-    <br />
+    <!-- <input type="text" placeholder="Skambučio laikas" v-model="callTime" />
+    <br /> -->
 
     <client-template 
       :damage-type="damageType"
@@ -74,7 +74,8 @@ export default {
         amount: this.amount,
         carBrand: this.carBrand,
         carNumber: this.carNumber,
-        callTime: this.callTime,
+        // callTime: this.callTime,
+        callTime: '',
         template: this.template,
         trackLink: null,
       });
