@@ -76,6 +76,7 @@ export default {
         carNumber: this.carNumber,
         callTime: this.callTime,
         template: this.template,
+        trackLink: null,
       });
     },
   },

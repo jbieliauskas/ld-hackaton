@@ -15,6 +15,10 @@ import axios from 'axios';
 export default {
   name: 'TrackLink',
   props: {
+    value: {
+      type: String,
+      default: null,
+    },
     name: {
       type: String,
       required: true,
@@ -39,11 +43,6 @@ export default {
       type: String,
       required: true,
     },
-  },
-  data() {
-    return {
-      value: null,
-    };
   },
   methods: {
     callSynthesizer() {
@@ -72,7 +71,9 @@ export default {
   created() {
     this
       .callSynthesizer()
-      .then(({data}) => this.value = data)
+      .then(
+        ({data}) => this.$emit('load', data)
+      )
       .catch(console.error);
   },
 };

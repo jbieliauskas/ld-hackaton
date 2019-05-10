@@ -4,14 +4,22 @@
     <td>{{ callTime }}</td>
     <td>Rezultatas</td>
     <track-link 
+      :value="trackLink"
       :name="name"
       :damage-type="damageType"
       :amount="amount"
       :car-brand="carBrand"
       :car-number="carNumber"
       :template="template"
+      @load="$emit('trackLink', $event)"
     />
-    <td><button>Skambinti</button></td>
+    <td>
+      <button 
+        @click="$emit('call')"
+      >
+        Skambinti
+      </button>
+    </td>
   </tr>
 </template>
 
@@ -50,6 +58,10 @@ export default {
     template: {
       type: String,
       required: true,
+    },
+    trackLink: {
+      type: String,
+      default: null,
     },
   },
 };

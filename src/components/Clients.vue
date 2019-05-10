@@ -14,6 +14,8 @@
           v-for="(client, index) in clients"
           :key="index"
           v-bind="client"
+          @trackLink="$emit('trackLink', {value: $event, index})"
+          @call="$emit('call', index)"
         />
       </tbody>
     </table>
