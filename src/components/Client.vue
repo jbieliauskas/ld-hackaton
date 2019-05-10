@@ -1,7 +1,7 @@
 <template>
   <tr>
     <td>{{ name }}</td>
-    <td>{{ callTime }}</td>
+    <td>TBD</td>
     <td>Rezultatas</td>
     <track-link 
       :name="name"
