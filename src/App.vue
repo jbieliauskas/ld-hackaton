@@ -5,9 +5,12 @@
         <v-layout align-center justify-center>
           <v-flex xs12 sm8 md6>
             <v-card class="elevation-12 mb-5">
+              <v-card-title primary-title>
+                <h1 class="headline">Šablonas</h1>
+              </v-card-title>
               <v-card-text>
                 <v-form>
-                  <h1>Šablonas</h1>
+                  <!-- <h1></h1> -->
                   <new-client @save="clients.push($event)" />
                 </v-form>
               </v-card-text>
@@ -18,8 +21,10 @@
             </v-card>
 
             <v-card class="elevation-12">
+              <v-card-title>
+                <h1 class="headline">Klientai</h1>
+              </v-card-title>
               <v-card-text>
-                <h1>Klientai</h1>
                 <clients 
                   :clients="clients" 
                   @trackLink="setClientTrackLink"
